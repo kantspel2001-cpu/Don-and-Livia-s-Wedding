@@ -25,8 +25,7 @@ body {
   margin:0;
   font-family:"Playfair Display", serif;
   color:var(--text);
-  background:
-    linear-gradient(180deg,#fff,var(--soft));
+  background:linear-gradient(180deg,#fff,var(--soft));
 }
 
 body::before {
@@ -62,6 +61,28 @@ header p {
   height:2px;
   background:linear-gradient(90deg,var(--green),var(--gold));
   margin:1.75rem auto 0;
+}
+
+/* Language toggle */
+.lang-toggle {
+  margin-top:1.25rem;
+  display:flex;
+  justify-content:center;
+  gap:.5rem;
+}
+
+.lang-toggle button {
+  background:transparent;
+  border:1px solid var(--gold);
+  border-radius:999px;
+  font-size:1.1rem;
+  padding:.25rem .55rem;
+  cursor:pointer;
+}
+
+.lang-toggle button.active,
+.lang-toggle button:hover {
+  background:var(--gold);
 }
 
 main {
@@ -136,54 +157,161 @@ footer {
 <body>
 
 <header>
-  <h1>Don & Livia</h1>
-  <p>Wedding Weekend Details</p>
+  <h1 data-en="Don & Livia" data-fr="Don & Livia" data-pt="Don & Livia">Don & Livia</h1>
+  <p data-en="Wedding Weekend Details"
+     data-fr="Détails du week-end de mariage"
+     data-pt="Detalhes do fim de semana do casamento">
+     Wedding Weekend Details
+  </p>
+
   <div class="divider"></div>
+
+  <div class="lang-toggle">
+    <button data-lang="en">🇨🇦</button>
+    <button data-lang="fr">🇫🇷</button>
+    <button data-lang="pt">🇧🇷</button>
+  </div>
 </header>
 
 <main>
 
 <section class="event">
-  <h2>Ceremony & Reception</h2>
-  <div class="date">Sunday, June 28, 2026 · 3:00 p.m.</div>
-  <div class="note">Recommended Attire: Colorful and Fun. The brighter the better!</div>
+  <h2 data-en="Ceremony & Reception"
+      data-fr="Cérémonie et réception"
+      data-pt="Cerimônia e recepção">
+      Ceremony & Reception
+  </h2>
+
+  <div class="date"
+       data-en="Sunday, June 28, 2026 · 3:00 p.m."
+       data-fr="Dimanche 28 juin 2026 · 15 h"
+       data-pt="Domingo, 28 de junho de 2026 · 15h">
+       Sunday, June 28, 2026 · 3:00 p.m.
+  </div>
+
+  <div class="note"
+       data-en="Recommended attire: colorful and fun"
+       data-fr="Tenue recommandée : colorée et festive"
+       data-pt="Traje recomendado: colorido e alegre">
+       Recommended attire: colorful and fun
+  </div>
+
   <div class="location">Pavillon Jamaïque<br>Montréal</div>
-  <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Pavillon+Jamaique+Montreal" target="_blank">View on Map</a>
+
+  <a class="map-button"
+     data-en="View on Map"
+     data-fr="Voir sur la carte"
+     data-pt="Ver no mapa"
+     href="https://www.google.com/maps/search/?api=1&query=Pavillon+Jamaique+Montreal"
+     target="_blank">
+     View on Map
+  </a>
 </section>
 
 <section class="event">
-  <h2>Pre-Wedding Party</h2>
-  <div class="date">Saturday, June 27, 2026 · 2:00 p.m.</div>
-  <div class="note">Children warmly invited</div>
+  <h2 data-en="Pre-Wedding Party"
+      data-fr="Fête avant le mariage"
+      data-pt="Festa pré-casamento">
+      Pre-Wedding Party
+  </h2>
+
+  <div class="date"
+       data-en="Saturday, June 27, 2026 · 2:00 p.m."
+       data-fr="Samedi 27 juin 2026 · 14 h"
+       data-pt="Sábado, 27 de junho de 2026 · 14h">
+       Saturday, June 27, 2026 · 2:00 p.m.
+  </div>
+
+  <div class="note"
+       data-en="Children warmly invited"
+       data-fr="Les enfants sont les bienvenus"
+       data-pt="Crianças são bem-vindas">
+       Children warmly invited
+  </div>
+
   <div class="location">
     Hosted by Bill &amp; Sarah Fletcher<br>
     635 Bd D'Youville<br>
     Châteauguay, QC J6J 5V2
   </div>
+
   <a class="map-button"
+     data-en="View on Map"
+     data-fr="Voir sur la carte"
+     data-pt="Ver no mapa"
      href="https://www.google.com/maps/search/?api=1&query=635+Bd+D%27Youville+Chateauguay+QC+J6J+5V2"
-     target="_blank" rel="noopener">
-    View on Map
+     target="_blank">
+     View on Map
   </a>
 </section>
 
 <section class="event">
-  <h2>Breakfast Send-Off</h2>
-  <div class="date">Monday, June 29, 2026</div>
-  <div class="note">For our out-of-town guests</div>
+  <h2 data-en="Breakfast Send-Off"
+      data-fr="Petit-déjeuner de départ"
+      data-pt="Café da manhã de despedida">
+      Breakfast Send-Off
+  </h2>
+
+  <div class="date"
+       data-en="Monday, June 29, 2026"
+       data-fr="Lundi 29 juin 2026"
+       data-pt="Segunda-feira, 29 de junho de 2026">
+       Monday, June 29, 2026
+  </div>
+
+  <div class="note"
+       data-en="For our out-of-town guests"
+       data-fr="Pour nos invités de l'extérieur"
+       data-pt="Para convidados de fora da cidade">
+       For our out-of-town guests
+  </div>
+
   <div class="location">
     Hotel Saint-Sulpice<br>
     414 St Sulpice St<br>
     Montreal, QC H2Y 2V5
   </div>
-  <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Hotel+Saint-Sulpice+Montreal" target="_blank">View on Map</a>
+
+  <a class="map-button"
+     data-en="View on Map"
+     data-fr="Voir sur la carte"
+     data-pt="Ver no mapa"
+     href="https://www.google.com/maps/search/?api=1&query=Hotel+Saint-Sulpice+Montreal"
+     target="_blank">
+     View on Map
+  </a>
 </section>
 
 </main>
 
-<footer>
+<footer data-en="We can’t wait to celebrate with you."
+        data-fr="Nous avons hâte de célébrer avec vous."
+        data-pt="Mal podemos esperar para celebrar com vocês.">
   We can’t wait to celebrate with you.
 </footer>
+
+<script>
+const buttons = document.querySelectorAll(".lang-toggle button");
+const elements = document.querySelectorAll("[data-en]");
+
+function setLanguage(lang) {
+  elements.forEach(el => el.textContent = el.dataset[lang]);
+  buttons.forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+  localStorage.setItem("lang", lang);
+}
+
+// Detect browser language
+const saved = localStorage.getItem("lang");
+const browserLang = navigator.language.startsWith("fr") ? "fr"
+                  : navigator.language.startsWith("pt") ? "pt"
+                  : "en";
+
+setLanguage(saved || browserLang);
+
+buttons.forEach(btn =>
+  btn.addEventListener("click", () => setLanguage(btn.dataset.lang))
+);
+</script>
 
 </body>
 </html>
