@@ -57,4 +57,157 @@
     .divider {
       width: 90px;
       height: 2px;
-      background: linear-gr
+      background: linear-gradient(90deg, var(--green), var(--gold));
+      margin: 1.75rem auto 0;
+    }
+
+    /* Layout */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* Event cards */
+    .event {
+      position: relative;
+      background: #fff;
+      border-radius: 18px;
+      padding: 1.75rem 1.75rem 1.9rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+      overflow: hidden;
+    }
+
+    /* Gold accent strip */
+    .event::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--green));
+    }
+
+    @media (hover: hover) {
+      .event:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 38px rgba(0,0,0,0.1);
+      }
+    }
+
+    .event h2 {
+      margin: 0 0 0.4rem;
+      font-size: 1.5rem;
+      color: var(--green);
+    }
+
+    .event .date {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .event .location {
+      margin-bottom: 0.6rem;
+      line-height: 1.55;
+    }
+
+    /* Accent notes */
+    .note {
+      display: inline-block;
+      background: rgba(201, 162, 77, 0.15);
+      color: #6b540f;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin: 0.25rem 0 0.6rem;
+    }
+
+    /* Gold button */
+    .map-button {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), #e6c76a);
+      color: #4a3b0a;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    .map-button:hover {
+      filter: brightness(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem 3rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Don & Livia</h1>
+    <p>Wedding Weekend Details</p>
+    <div class="divider"></div>
+  </header>
+
+  <main>
+
+    <section class="event">
+      <h2>Ceremony & Reception</h2>
+      <div class="date">Sunday, June 28, 2026 · 3:00 p.m.</div>
+      <div class="note">Tropical attire encouraged 🌴</div>
+      <div class="location">
+        Pavillon Jamaïque<br>
+        Montréal
+      </div>
+      <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Pavillon+Jamaïque+Montréal" target="_blank" rel="noopener">
+        View on Map
+      </a>
+    </section>
+
+    <section class="event">
+      <h2>Pre-Wedding Party</h2>
+      <div class="date">Saturday, June 27, 2026 · 2:00 p.m.</div>
+      <div class="note">Children warmly invited</div>
+      <div class="location">
+        Hosted by Bill &amp; Sarah Fletcher<br>
+        635 Bd D'Youville<br>
+        Châteauguay, QC J6J 5V2
+      </div>
+      <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=635+Bd+D'Youville+Châteauguay+QC+J6J+5V2" target="_blank" rel="noopener">
+        View on Map
+      </a>
+    </section>
+
+    <section class="event">
+      <h2>Breakfast Send-Off</h2>
+      <div class="date">Monday, June 29, 2026</div>
+      <div class="note">For our out-of-town guests</div>
+      <div class="location">
+        Hotel Saint-Sulpice<br>
+        414 St Sulpice St<br>
+        Montreal, QC H2Y 2V5
+      </div>
+      <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Hotel+Saint-Sulpice+414+St+Sulpice+St+Montreal+QC+H2Y+2V5" target="_blank" rel="noopener">
+        View on Map
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    We can’t wait to celebrate with you.
+  </footer>
+
+</body>
+</html>
