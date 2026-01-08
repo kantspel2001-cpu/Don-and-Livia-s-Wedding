@@ -135,15 +135,35 @@ main {
   line-height:1.55;
 }
 
+/* ✅ FIXED MAP BUTTON */
 .map-button {
-  display:inline-block;
-  margin-top:.75rem;
-  padding:.55rem 1.1rem;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-top:.85rem;
+  padding:.6rem 1.25rem;
+
+  min-height:42px;
+  white-space:nowrap;
+
   border-radius:999px;
   background:linear-gradient(135deg,var(--gold),#e6c76a);
   color:#4a3b0a;
+
   font-weight:600;
+  font-size:.95rem;
   text-decoration:none;
+
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* Optional mobile polish */
+@media (max-width:480px) {
+  .map-button {
+    width:100%;
+    text-align:center;
+  }
 }
 
 footer {
@@ -158,6 +178,7 @@ footer {
 
 <header>
   <h1 data-en="Don & Livia" data-fr="Don & Livia" data-pt="Don & Livia">Don & Livia</h1>
+
   <p data-en="Wedding Weekend Details"
      data-fr="Détails du week-end de mariage"
      data-pt="Detalhes do fim de semana do casamento">
@@ -224,7 +245,7 @@ footer {
 
   <div class="note"
        data-en="Children warmly invited"
-       data-fr="Les enfants sont tres bienvenus"
+       data-fr="Les enfants sont très bienvenus"
        data-pt="Crianças são mais que bem-vindas">
        Children warmly invited
   </div>
@@ -239,7 +260,7 @@ footer {
      data-en="View on Map"
      data-fr="Voir sur la carte"
      data-pt="Ver no mapa"
-     href="https://www.google.com/maps/search/?api=1&query=635+Bd+D%27Youville+Chateauguay+QC+J6J+5V2"
+     href="https://www.google.com/maps/search/?api=1&query=635+Bd+D'Youville+Chateauguay+QC+J6J+5V2"
      target="_blank">
      View on Map
   </a>
@@ -300,11 +321,10 @@ function setLanguage(lang) {
   localStorage.setItem("lang", lang);
 }
 
-// Detect browser language
 const saved = localStorage.getItem("lang");
-const browserLang = navigator.language.startsWith("fr") ? "fr"
-                  : navigator.language.startsWith("pt") ? "pt"
-                  : "en";
+const browserLang =
+  navigator.language.startsWith("fr") ? "fr" :
+  navigator.language.startsWith("pt") ? "pt" : "en";
 
 setLanguage(saved || browserLang);
 
