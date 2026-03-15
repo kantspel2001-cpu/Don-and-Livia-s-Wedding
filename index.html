@@ -135,13 +135,18 @@ main {
   line-height:1.55;
 }
 
-/* ✅ FIXED MAP BUTTON */
+.button-row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+  margin-top:.85rem;
+}
+
 .map-button {
   display:inline-flex;
   align-items:center;
   justify-content:center;
 
-  margin-top:.85rem;
   padding:.6rem 1.25rem;
 
   min-height:42px;
@@ -158,9 +163,30 @@ main {
   -webkit-tap-highlight-color:transparent;
 }
 
-/* Optional mobile polish */
+.hotel-button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:.6rem 1.25rem;
+
+  min-height:42px;
+  white-space:nowrap;
+
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--green),#2a9073);
+  color:#fff;
+
+  font-weight:600;
+  font-size:.95rem;
+  text-decoration:none;
+
+  -webkit-tap-highlight-color:transparent;
+}
+
 @media (max-width:480px) {
-  .map-button {
+  .map-button,
+  .hotel-button {
     width:100%;
     text-align:center;
   }
@@ -192,6 +218,17 @@ footer {
     <button data-lang="fr">🇫🇷</button>
     <button data-lang="pt">🇧🇷</button>
   </div>
+
+  <div style="margin-top:1.25rem;">
+    <a class="hotel-button"
+       data-en="🏨 Reserve a Room at Hotel Saint-Sulpice"
+       data-fr="🏨 Réserver une chambre à l'Hôtel Saint-Sulpice"
+       data-pt="🏨 Reservar um quarto no Hotel Saint-Sulpice"
+       href="https://be.synxis.com/?adult=1&arrive=2026-06-28&chain=17448&child=0&currency=CAD&depart=2026-06-29&group=2606WE&hotel=80196&level=hotel&locale=en-US&productcurrency=CAD&rooms=1"
+       target="_blank">
+       🏨 Reserve a Room at Hotel Saint-Sulpice
+    </a>
+  </div>
 </header>
 
 <main>
@@ -219,14 +256,16 @@ footer {
 
   <div class="location">Pavillon Jamaïque<br>Montréal</div>
 
-  <a class="map-button"
-     data-en="View on Map"
-     data-fr="Voir sur la carte"
-     data-pt="Ver no mapa"
-     href="https://www.google.com/maps/search/?api=1&query=Pavillon+Jamaique+Montreal"
-     target="_blank">
-     View on Map
-  </a>
+  <div class="button-row">
+    <a class="map-button"
+       data-en="View on Map"
+       data-fr="Voir sur la carte"
+       data-pt="Ver no mapa"
+       href="https://www.google.com/maps/search/?api=1&query=Pavillon+Jamaique+Montreal"
+       target="_blank">
+       View on Map
+    </a>
+  </div>
 </section>
 
 <section class="event">
@@ -256,14 +295,16 @@ footer {
     Châteauguay, QC J6J 5V2
   </div>
 
-  <a class="map-button"
-     data-en="View on Map"
-     data-fr="Voir sur la carte"
-     data-pt="Ver no mapa"
-     href="https://www.google.com/maps/search/?api=1&query=635+Bd+D'Youville+Chateauguay+QC+J6J+5V2"
-     target="_blank">
-     View on Map
-  </a>
+  <div class="button-row">
+    <a class="map-button"
+       data-en="View on Map"
+       data-fr="Voir sur la carte"
+       data-pt="Ver no mapa"
+       href="https://www.google.com/maps/search/?api=1&query=635+Bd+D'Youville+Chateauguay+QC+J6J+5V2"
+       target="_blank">
+       View on Map
+    </a>
+  </div>
 </section>
 
 <section class="event">
@@ -293,22 +334,24 @@ footer {
     Montreal, QC H2Y 2V5
   </div>
 
-  <a class="map-button"
-     data-en="View on Map"
-     data-fr="Voir sur la carte"
-     data-pt="Ver no mapa"
-     href="https://www.google.com/maps/search/?api=1&query=Hotel+Saint-Sulpice+Montreal"
-     target="_blank">
-     View on Map
-  </a>
+  <div class="button-row">
+    <a class="map-button"
+       data-en="View on Map"
+       data-fr="Voir sur la carte"
+       data-pt="Ver no mapa"
+       href="https://www.google.com/maps/search/?api=1&query=Hotel+Saint-Sulpice+Montreal"
+       target="_blank">
+       View on Map
+    </a>
+  </div>
 </section>
 
 </main>
 
-<footer data-en="We can’t wait to celebrate with you."
+<footer data-en="We can't wait to celebrate with you."
         data-fr="Nous avons hâte de célébrer avec vous."
         data-pt="Mal podemos esperar para celebrar com vocês.">
-  We can’t wait to celebrate with you.
+  We can't wait to celebrate with you.
 </footer>
 
 <script>
