@@ -108,6 +108,7 @@ main {
   height:4px;
   width:100%;
   background:linear-gradient(90deg,var(--gold),var(--green));
+  border-radius:18px 18px 0 0;
 }
 
 .event h2 {
@@ -120,6 +121,7 @@ main {
   margin-bottom:.5rem;
 }
 
+/* Default note style (used for non-attire notes) */
 .note {
   display:inline-block;
   background:rgba(201,162,77,.15);
@@ -129,6 +131,70 @@ main {
   font-size:.82rem;
   font-weight:600;
   margin:.25rem 0 .6rem;
+}
+
+/* ── Enhanced attire note ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 4px 18px rgba(255,100,80,.35), 0 2px 8px rgba(255,180,60,.3); }
+  50%       { box-shadow: 0 6px 28px rgba(255,100,80,.55), 0 4px 14px rgba(255,180,60,.5); }
+}
+
+.note-attire {
+  display:block;
+  position:relative;
+  margin:.55rem 0 .85rem;
+  padding:.7rem 1.1rem .7rem 3rem;
+  border-radius:14px;
+
+  /* Vibrant rainbow-ish gradient */
+  background: linear-gradient(
+    120deg,
+    #ff6b6b, #ff9f43, #f7d56e, #55efc4, #74b9ff, #a29bfe, #fd79a8, #ff6b6b
+  );
+  background-size: 300% auto;
+
+  color:#fff;
+  font-weight:700;
+  font-size:.95rem;
+  letter-spacing:.01em;
+  text-shadow: 0 1px 3px rgba(0,0,0,.25);
+
+  animation:
+    shimmer 4s linear infinite,
+    pulse-glow 2.5s ease-in-out infinite;
+
+  cursor:default;
+  user-select:none;
+}
+
+/* Sparkle icon */
+.note-attire::before {
+  content:"✨";
+  position:absolute;
+  left:.85rem;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:1.1rem;
+  text-shadow:none;
+}
+
+/* Subtle white shine overlay */
+.note-attire::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:14px;
+  background:linear-gradient(
+    135deg,
+    rgba(255,255,255,.22) 0%,
+    rgba(255,255,255,0) 60%
+  );
+  pointer-events:none;
 }
 
 .location {
@@ -146,20 +212,15 @@ main {
   display:inline-flex;
   align-items:center;
   justify-content:center;
-
   padding:.6rem 1.25rem;
-
   min-height:42px;
   white-space:nowrap;
-
   border-radius:999px;
   background:linear-gradient(135deg,var(--gold),#e6c76a);
   color:#4a3b0a;
-
   font-weight:600;
   font-size:.95rem;
   text-decoration:none;
-
   -webkit-tap-highlight-color:transparent;
 }
 
@@ -167,20 +228,15 @@ main {
   display:inline-flex;
   align-items:center;
   justify-content:center;
-
   padding:.6rem 1.25rem;
-
   min-height:42px;
   white-space:nowrap;
-
   border-radius:999px;
   background:linear-gradient(135deg,var(--green),#2a9073);
   color:#fff;
-
   font-weight:600;
   font-size:.95rem;
   text-decoration:none;
-
   -webkit-tap-highlight-color:transparent;
 }
 
@@ -247,7 +303,8 @@ footer {
        Sunday, June 28, 2026 · 3:00 p.m.
   </div>
 
-  <div class="note"
+  <!-- Enhanced attire note -->
+  <div class="note-attire"
        data-en="Recommended attire: colorful and fun. The brighter, the better!"
        data-fr="Tenue recommandée : colorée et festive"
        data-pt="Traje recomendado: alegre: flores e cores">
